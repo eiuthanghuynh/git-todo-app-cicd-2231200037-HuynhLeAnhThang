@@ -14,6 +14,12 @@ describe('TodoService Unit Tests', () => {
         // TODO: Call the addTodo method with some text.
         // Then, assert that the service's todos array has a length of 1.
         // Assert that the text of the first todo matches the input text.
+        text = "test text";
+        
+        service.addTodo(text);
+
+        expect(service.todos.length).toBe(1);
+        expect(service.todos[0].text).toMatch(text);
     });
 
     test('should toggle the completed state of a todo', () => {
